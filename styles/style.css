@@ -9,6 +9,22 @@
     /* 1rem = 16px */
 }
 
+body {
+  background-color: #005384;
+  color: #e2ecee;
+}
+.titulo-destaque {
+  color: #f3bc00;
+}
+body {
+  background-color: #fff;
+  color: #75aadb;
+}
+
+.titulo-destaque {
+  color: #fcbf49;
+}
+
 * {
     padding: 0;
     margin: 0;
