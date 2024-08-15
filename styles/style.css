@@ -2,9 +2,9 @@
 
 :root {
     /* LIGHT MODE */
-    --color-primario: #F6F6F6;
-    --color-secundario: #000000;
-    --color-terciario: #22D4FD;
+    --color-primario: #FFF;
+    --color-secundario: #75aadb;
+    --color-terciario: #fcbf49;
     --color-hover: #272727;
     /* FONT SIZE */
     --tamano-fuente: 1.5rem;
@@ -14,9 +14,9 @@
 @media (prefers-color-scheme: dark) {
     :root {
         /* DARK MODE */
-        --color-primario: #000000;
-        --color-secundario: #F6F6F6;
-        --color-terciario: #22D4FD;
+        --color-primario: #005384;
+        --color-secundario: #e2ecee;
+        --color-terciario: #f3bc00;
         --color-hover: #272727;
     }
 }
