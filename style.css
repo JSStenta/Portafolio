@@ -1,45 +1,87 @@
-/* Este repositório base fué creado para ayudarte en caso que no sepas como comenzar, recuerda que el portafolio es tu carta de presentación y debes darle tu cara, por eso te invitamos a personalizarlo según tu estilo y preferencias no te limites apenas al layout propuesto en figma  
-*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+
 :root {
-    --color-de-fondo: #F5F5F5;
-    --color-de-fondo-menu: #ffffff;
-    --color-de-link: #000000;
+    /* LIGHT MODE */
+    --color-fondo-principal: #FFFFFF;
+    --color-fondo-secundario: #E6F7FF;
+    --color-texto-principal: #003366;
+    --color-resaltado: #FFD700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background-color: var(--color-de-fondo);
-    font-family: 'Raleway', sans-serif;
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0;
+    background-color: var(--color-fondo-principal);
+    display: flex;
+    flex-direction: column;
+    /*box-sizing: border-box;*/
+    font-family: 'Montserrat', sans-serif;
+    gap: 1rem;
     line-height: 1.6;
 }
 
-ol, ul, li {
+ol,
+ul,
+li {
     list-style: none;
 }
 
 a {
+    color: var(--color-texto-principal);
     text-decoration: none;
-    color: var(--color-de-link);
+}
+
+.centrado {
+    text-align: center;
+}
+
+/* ------------------------------ Secciones -----------------------------------
+section:nth-of-type(odd) {
+    background-color: var(--color-fondo-secundario);
+}
+*/
+section {
+    padding: 32px 152px;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--color-fondo-secundario);
 }
 
 /* ------------------------------ Sección Menú -------------------------------*/
 .cabecera {
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    background-color: var(--color-fondo-secundario);
+    display: flex;
+    justify-content: flex-start;
     padding: 1rem;
-    background-color: var(--color-de-fondo-menu);
+}
+
+.cabecera>* {
+    border: #000000 solid 1px;
 }
 
 .cabecera__logo {
-    max-width: 80px; /* Ajuste para pantallas pequeñas */
+    margin-right: 1rem;
+    max-width: 80px;
+    /* Ajuste para pantallas pequeñas */
 }
 
 .cabecera__titulo {
     font-size: 1.2rem;
-    text-align: center;
+    text-align: left;
+}
+
+.navegacion {
+    width: 50%;
+}
+
+.navegacion__elemento {
+    border: green solid 1px;
 }
 
 .navegacion__lista {
@@ -47,16 +89,58 @@ a {
 }
 
 .navegacion__elemento a {
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
-/* ------------------------------ Sección Presentación ------------------------------*/
 
+/* ------------------------------ Sección Presentación ------------------------------*/
+.presentacion {
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1rem;
+}
+
+.presentacion__foto {
+    border-radius: 50%;
+    max-width: 368px;
+    width: 100%;
+}
+
+.presentacion__texto {
+    flex: 1;
+}
 
 /* ------------------------------ Sección sobre mí ----------------------------------*/
 
 
 /*------------------------------ Sección de Habilidades ------------------------------*/
+.lista {
+    border: red solid 1px;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+    margin: auto;
+}
 
+
+.elemento__grid {
+    align-content: center;
+    background-color: var(--color-fondo-secundario);
+    border: green solid 1px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.icono {
+    /* Asegura que la imagen se recorte y ajuste sin deformarse */
+    border: blue solid 1px;
+    /* Mantén esto si necesitas ver los bordes */
+    border-radius: inherit;
+    /* Hace que la imagen ocupe todo el ancho del contenedor */
+    object-fit: contain;
+    width: 40%;
+    /* Opcional: para que respete el borde redondeado del contenedor */
+}
 
 /*------------------------------ Sección de Aficiones --------------------------------*/
 
@@ -66,15 +150,33 @@ a {
 
 /*------------------------------ Sección de Contacto ---------------------------------*/
 
+/*--------------------------------- Pie de pagina ------------------------------------*/
+.pie {
+    background-color: var(--color-fondo-secundario);
+    padding: 1rem;
+    text-align: center;
+}
+
+
+/* ------------------------------ Media Queries ---------------------------------------*/
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* DARK MODE */
+        --color-fondo-principal: #001F33;
+        --color-fondo-secundario: #004C80;
+        --color-texto-principal: #F0F0F0;
+        --color-resaltado: #FFE066;
+    }
+}
 
 /* ------------------------------ Responsividad ---------------------------------------*/
 
 /* Tablets y pantallas más grandes */
 @media (min-width: 768px) {
     .cabecera {
+        align-items: center;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
     }
 
     .cabecera__logo {
@@ -99,6 +201,7 @@ a {
 
 /* Pantallas grandes */
 @media (min-width: 1024px) {
+
     /* Aquí puedes ajustar aún más el diseño para pantallas grandes */
     .cabecera__titulo {
         font-size: 1.8rem;
@@ -107,4 +210,12 @@ a {
     .navegacion__elemento a {
         font-size: 1.1rem;
     }
+}
+
+/* --------------------------------- Iconos ------------------------------------------*/
+.material-symbols-outlined {
+    color: var(--color-resaltado);
+    color: var(--color-resaltado);
+    font-size: 4vw;
+    display: block;
 }
