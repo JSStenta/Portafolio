@@ -1,0 +1,326 @@
+/* ---------------------------- Estilos generales ----------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:root {
+    /* LIGHT MODE */
+    --color-fondo-principal: #FFFFFF;
+    --color-fondo-secundario: #E6F7FF;
+    --color-texto-principal: #003366;
+    --color-resaltado: #FFD700;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* DARK MODE */
+        --color-fondo-principal: #001F33;
+        --color-fondo-secundario: #004C80;
+        --color-texto-principal: #F0F0F0;
+        --color-resaltado: #FFE066;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-fondo-principal);
+    color: var(--color-texto-principal);
+    display: flex;
+    flex-direction: column;
+    /*box-sizing: border-box;*/
+    font-family: 'Montserrat', sans-serif;
+    gap: 1rem;
+    line-height: 1.6;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    color: var(--color-resaltado);
+    text-decoration: none;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+.centrado {
+    text-align: center;
+}
+
+.lista {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+    margin: auto;
+}
+
+.elemento__grid {
+    align-content: center;
+    background-color: var(--color-fondo-secundario);
+    box-shadow: 0 0 0.3rem var(--color-resaltado);
+    border-radius: 3%;
+    padding: 1rem;
+    text-align: center;
+}
+
+.icono {
+    border-radius: inherit;
+    height: auto;
+    object-fit: contain;
+    width: 40%;
+    /* filter: drop-shadow(0 0 1rem var(--color-resaltado)); */
+}
+
+strong {
+    color: var(--color-resaltado);
+}
+
+/* -------------------------------- Secciones --------------------------------*/
+section:nth-of-type(odd) {
+    background-color: var(--color-fondo-principal);
+}
+
+section {
+    padding: 32px 152px;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--color-fondo-secundario);
+}
+
+/* ------------------------------ Sección Menú -------------------------------*/
+.cabecera {
+    align-items: center;
+    background-color: var(--color-fondo-secundario);
+    display: flex;
+    justify-content: flex-start;
+    padding: 1rem;
+}
+
+.cabecera>* {
+    border: #000000 solid 1px;
+}
+
+.cabecera__logo {
+    margin-right: 1rem;
+    max-width: 80px;
+    /* Ajuste para pantallas pequeñas */
+}
+
+.cabecera__titulo {
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.navegacion {
+    text-transform: uppercase;
+    width: 60%;
+    text-align: center;
+}
+
+.navegacion__elemento {
+    margin: auto;
+}
+
+.navegacion__lista {
+    display: none;
+}
+
+.navegacion__elemento a {
+    font-size: 1rem;
+}
+
+/* ------------------------------ Sección Presentación ------------------------------*/
+.presentacion {
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1rem;
+}
+
+.presentacion__foto {
+    border-radius: 50%;
+    max-width: 368px;
+    width: 100%;
+    filter: drop-shadow(0 0 1rem var(--color-resaltado));
+}
+
+.presentacion__texto {
+    flex: 1;
+}
+
+/* ------------------------------ Sección sobre mí ----------------------------------*/
+.sobre-mi {
+    padding-right: minmax(10%, 520px);
+}
+
+/*------------------------------ Sección de Habilidades ------------------------------*/
+
+/*------------------------- Sección de Formación académica ---------------------------*/
+.formacion__elemento {
+    align-content: end;
+}
+
+
+/*------------------------------ Sección de Proyectos --------------------------------*/
+.proyectos__descripcion__texto {
+    display: block;
+    margin: 0.3rem 1rem;
+}
+
+.proyectos__boton {
+    font-size: .8rem;
+    background-color: var(--color-fondo-principal);
+    color: var(--color-texto-principal);
+    border: 1px solid var(--color-resaltado);
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+}
+
+/*------------------------- Sección de Experiencia Laboral ---------------------------*/
+.experiencia__elemento {
+    align-content: start;
+}
+
+.experiencia__descripcion {
+    text-align: justify;
+}
+
+/*------------------------------ Sección de Contacto ---------------------------------*/
+
+.contacto__titulo {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.contacto__formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contacto__campo {
+    padding: 0.75rem;
+    border: 1px solid var(--color-texto-principal);
+    border-radius: 0.3rem;
+    font-size: 1rem;
+}
+
+.contacto__campo--textarea {
+    resize: vertical;
+    height: 100%;
+}
+
+.contacto__boton {
+    background-color: var(--color-resaltado);
+    border: none;
+    border-radius: 0.3rem;
+    color: var(--color-fondo-principal);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.75rem;
+    text-align: center;
+}
+
+/*--------------------------------- Pie de pagina ------------------------------------*/
+.pie {
+    background-color: var(--color-fondo-secundario);
+    padding: 1rem;
+    text-align: center;
+}
+
+/* ------------------------------ Responsividad ---------------------------------------*/
+
+/* Tablets y pantallas más grandes */
+@media (min-width: 768px) {
+    .cabecera {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .cabecera__logo {
+        max-width: 100px;
+    }
+
+    .cabecera__titulo {
+        font-size: 1.5rem;
+    }
+
+    .navegacion__lista {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 0;
+    }
+
+    .navegacion__elemento a {
+        font-size: 1rem;
+    }
+}
+
+/* Pantallas laptop  */
+@media (width >=1024px) {
+
+    /* Aquí puedes ajustar aún más el diseño para pantallas grandes */
+    .cabecera__titulo {
+        font-size: 1.8rem;
+    }
+
+    .navegacion__elemento a {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* Pantallas tablet */
+@media (width <=768px) {
+    section {
+        padding: 32px;
+    }
+
+    .navegacion {
+        display: none;
+    }
+
+    .lista {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        margin: auto;
+    }
+}
+
+/* Pantallas mobile */
+@media (width <=360px) {
+    body {
+        background-color: red;
+    }
+
+    .presentacion {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* --------------------------------- Iconos ------------------------------------------*/
+.material-symbols-outlined {
+    color: var(--color-resaltado);
+    display: block;
+    font-size: 4vw;
+}
+
+#logo {
+    font-size: 1rem;
+}
