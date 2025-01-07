@@ -106,10 +106,6 @@ section:nth-of-type(even) {
     padding: 1rem;
 }
 
-.cabecera>* {
-    border: #000000 solid 1px;
-}
-
 .cabecera__logo {
     margin-right: 1rem;
     max-width: 80px;
